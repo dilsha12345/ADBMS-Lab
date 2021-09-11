@@ -6,7 +6,7 @@ client = MongoClient("mongodb://localhost:27017/")
 db = client["med_data"]
 my_collection = db["patient_data"]
 patient_record = {
-    "Name": "Harsha",
+    "Name": "Dilsha",
     "Age": 22,
     "Sex":"F",
     "Blood pressure": [{"sys":176}, {"dia":82}],
