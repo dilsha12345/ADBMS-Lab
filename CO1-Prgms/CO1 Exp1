@@ -1,7 +1,7 @@
 
-create table student_fathima(rollno integer primary key,name varchar(20),dob date, dept varchar(5),marks float);
+   create table student_fathima(rollno integer primary key,name varchar(20),dob date, dept varchar(5),marks float);
 
-A) SQL> insert into student_fathima values(1,'amitha','18-jun-1988','CS',480);
+A)  SQL> insert into student_fathima values(1,'amitha','18-jun-1988','CS',480);
 
     1 row created.
 
@@ -9,7 +9,7 @@ A) SQL> insert into student_fathima values(1,'amitha','18-jun-1988','CS',480);
 
     1 row created.
 	
-	SQL> insert into student_fathima values(3,'hari','02-aug-1999','mca',480);
+    SQL> insert into student_fathima values(3,'hari','02-aug-1999','mca',480);
 
     1 row created.
 
@@ -17,7 +17,7 @@ A) SQL> insert into student_fathima values(1,'amitha','18-jun-1988','CS',480);
 
     1 row created.
 	
-	SQL> insert into student_fathima values(5,'Dilsha','28-feb-1999','mca',480);
+    SQL> insert into student_fathima values(5,'Dilsha','28-feb-1999','mca',480);
 
     1 row created.
 
@@ -25,7 +25,7 @@ A) SQL> insert into student_fathima values(1,'amitha','18-jun-1988','CS',480);
 
     1 row created.
 	
-	SQL> insert into student_fathima values(7,'maneesha','02-nov-1998','civil',480);
+    SQL> insert into student_fathima values(7,'maneesha','02-nov-1998','civil',480);
 
     1 row created.
 
@@ -35,7 +35,7 @@ A) SQL> insert into student_fathima values(1,'amitha','18-jun-1988','CS',480);
 	
 	
 	
-	SQL> select * from student_fathima;
+   SQL> select * from student_fathima;
 
     ROLLNO NAME                 DOB       DEPT       MARKS
 ---------- -------------------- --------- ----- ----------
@@ -53,16 +53,16 @@ A) SQL> insert into student_fathima values(1,'amitha','18-jun-1988','CS',480);
 	
 	
 	
-B)	SQL> alter table student_fathima add(address varchar(10));
+B)  SQL> alter table student_fathima add(address varchar(10));
 
     Table altered.
 	
-	SQL> alter table student_fathima modify(name varchar(20));
+    SQL> alter table student_fathima modify(name varchar(20));
 
     Table altered.
 	
 	
-C)	SQL> select * from student_fathima;
+C)  SQL> select * from student_fathima;
 
     ROLLNO NAME                 DOB       DEPT       MARKS ADDRESS
 ---------- -------------------- --------- ----- ---------- ----------
@@ -88,12 +88,12 @@ C)	SQL> select * from student_fathima;
  MARKS                                              FLOAT(126)
  ADDRESS                                            VARCHAR2(10)
 
-D)	SQL> alter table student_fathima modify(address varchar(30));
+D)  SQL> alter table student_fathima modify(address varchar(30));
 
     Table altered.
 	
 	
-	SQL> alter table student_fathima modify(address varchar(30));
+    SQL> alter table student_fathima modify(address varchar(30));
 
     Table altered.
 
@@ -111,15 +111,15 @@ D)	SQL> alter table student_fathima modify(address varchar(30));
 
     SQL> update student_fathima set address='Green Valley,Cochin' where rollno=7;
 	
-	1 row updated.
+   1 row updated.
 
     
-	SQL> set linesize 120
+   SQL> set linesize 120
 	
     SQL> select * from student_fathima;
 
     ROLLNO NAME                 DOB       DEPT       MARKS ADDRESS
----------- -------------------- --------- ----- ---------- ------------------------------
+   ---------- -------------------- --------- ----- ---------- ------------------------------
          1 amitha               18-JUN-88 CS           480 NO:5,Gandhinagar
          2 arya                 12-JUL-89 IT           500 Flat No:5A,Skyline Aluva
          3 hari                 02-AUG-99 MCA          900 Apple Heights,Padivattom
@@ -129,17 +129,17 @@ D)	SQL> alter table student_fathima modify(address varchar(30));
          7 maneesha             02-NOV-98 civil        650 Green Valley,Cochin
          8 minhathullha         12-DEC-97 Btech        590
 
-E)	SQL> select name,dob from student_fathima where months_between(sysdate,dob)/12<22;
+E)   SQL> select name,dob from student_fathima where months_between(sysdate,dob)/12<22;
 
        NAME                 DOB
      -------------------- ---------
       bavani               03-MAR-00
 
 
-F)	SQL> select * from student_fathima order by marks;
+F)   SQL> select * from student_fathima order by marks;
 
     ROLLNO NAME                 DOB       DEPT       MARKS ADDRESS
----------- -------------------- --------- ----- ---------- ------------------------------
+   ---------- -------------------- --------- ----- ---------- ------------------------------
          4 bavani               03-MAR-00 Maths        300
          1 amitha               18-JUN-88 CS           480 NO:5,Gandhinagar
          2 arya                 12-JUL-89 IT           500 Flat No:5A,Skyline Aluva
@@ -149,20 +149,20 @@ F)	SQL> select * from student_fathima order by marks;
          5 Dilsha               28-FEB-99 MCA          800
          3 hari                 02-AUG-99 MCA          900 Apple Heights,Padivattom
 
-8 rows selected.
+   8 rows selected.
 
-G)	SQL> select name from student_fathima where dept= 'CS' and marks>500;
+G)   SQL> select name from student_fathima where dept= 'CS' and marks>500;
 
-    no rows selected
+     no rows selected
 	
-H)	SQL> select name from student_fathima where marks>(select avg(marks)from student_fathima);
+H)   SQL> select name from student_fathima where marks>(select avg(marks)from student_fathima);
 
       NAME
-    --------------------
+     --------------------
      hari
      Dilsha
      maneesha
 	 
-I)	drop table student_fathima;
+I)   drop table student_fathima;
     
-	Table dropped.
+     Table dropped.
